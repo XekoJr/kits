@@ -25,9 +25,11 @@ backend/Homestead.yaml
 frontend/node_modules/
 frontend/dist/
 
-# Docker
-Dockerfile
-docker-compose.yml
+# Docker (root-level real files generated from the .example templates;
+# backend/Dockerfile and frontend/Dockerfile are real source and ARE tracked)
+/Dockerfile
+/docker-compose.yml
+/.env
 
 # Editors / OS
 .DS_Store

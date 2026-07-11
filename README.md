@@ -20,9 +20,8 @@ Kits is a full-stack web application for organizing packing/shopping lists ("kit
 
 ```
 kits-project/
-├── backend/    # Laravel API (auth, kits, items, categories)
-├── frontend/   # Svelte SPA
-├── Dockerfile.example
+├── backend/    # Laravel API (auth, kits, items, categories), own Dockerfile
+├── frontend/   # Svelte SPA built with Vite, served by nginx, own Dockerfile
 └── docker-compose.yml.example
 ```
 
@@ -30,10 +29,10 @@ kits-project/
 
 ### Docker
 
-Copy the example Docker files and fill in the required environment variables:
+Copy the example env and compose files and fill in the required values:
 
 ```bash
-cp Dockerfile.example Dockerfile
+cp .env.example .env
 cp docker-compose.yml.example docker-compose.yml
 ```
 
@@ -43,7 +42,9 @@ Then build and start the containers:
 docker compose up -d --build
 ```
 
-The API will be available on `http://localhost:8080` and PostgreSQL on port `5432`.
+By default the frontend is available on `http://localhost:8080` (which reverse-proxies
+`/api` requests to the backend), the backend API directly on `http://localhost:8000`,
+and PostgreSQL on port `5432`. Ports and credentials are configured via `.env`.
 
 ### Backend (manual setup)
 
