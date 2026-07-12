@@ -79,6 +79,6 @@ npm run dev
 | GET/POST | `/api/kits/{kit_id}/items` | List/create items for a kit |
 | PUT/DELETE | `/api/kits/{kit_id}/items/{id}` | Update/delete an item |
 | PATCH | `/api/kits/{kit_id}/items/{id}/toggle` | Toggle an item's purchased state |
-| GET/POST/PUT/DELETE | `/api/categories` | CRUD for categories |
+| GET/POST/PUT/DELETE | `/api/categories` | CRUD for categories | 
 
 All routes except register/login require a valid Sanctum token via the `Authorization: Bearer` header.
