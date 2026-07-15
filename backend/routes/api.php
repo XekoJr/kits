@@ -5,7 +5,7 @@ use App\Http\Controllers\KitController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:5,15');
 Route::post('/login',    [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
